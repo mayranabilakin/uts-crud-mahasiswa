@@ -1,0 +1,149 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 30px;
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+h1 {
+    color: #2457a7;
+}
+
+h2 {
+    margin-top: 28px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+label {
+    margin-top: 5px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+button,
+.btn-edit,
+.btn-cancel {
+    display: inline-block;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+button {
+    margin-top: 10px;
+    background-color: #2457a7;
+    color: white;
+}
+
+button:hover,
+.btn-edit:hover {
+    background-color: #183e7b;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #2457a7;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f5fa;
+}
+
+.actions {
+    white-space: nowrap;
+}
+
+.actions form {
+    display: inline;
+    margin: 0;
+}
+
+.btn-edit {
+    background-color: #2457a7;
+    color: white;
+}
+
+.btn-delete {
+    background-color: #c0392b;
+    color: white;
+    margin: 0;
+}
+
+.btn-delete:hover {
+    background-color: #922b21;
+}
+
+.btn-cancel {
+    background-color: #e5e7eb;
+    color: #333;
+    margin-top: 8px;
+}
+
+.message {
+    padding: 12px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.error {
+    background-color: #fde8e7;
+    color: #a61b1b;
+}
+
+.success {
+    background-color: #e3f7e8;
+    color: #176b32;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}
