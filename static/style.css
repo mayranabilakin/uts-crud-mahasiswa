@@ -147,3 +147,34 @@ tbody tr:nth-child(even) {
         padding: 15px;
     }
 }
+
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.search-form input {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.search-form button,
+.search-form a {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.search-form a {
+    display: inline-flex;
+    align-items: center;
+    background: #e5e7eb;
+    color: #333;
+}

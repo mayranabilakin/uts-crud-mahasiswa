@@ -69,10 +69,25 @@ def validasi_form(form):
 # READ: menampilkan daftar mahasiswa
 @app.route("/")
 def home():
+    kata_kunci = request.args.get("cari", "").strip()
+
     conn = get_db()
-    mahasiswa = conn.execute(
-        "SELECT * FROM mahasiswa ORDER BY nim"
-    ).fetchall()
+
+    if kata_kunci:
+        mahasiswa = conn.execute(
+            """
+            SELECT * FROM mahasiswa
+            WHERE CAST(nim AS TEXT) LIKE ?
+               OR nama LIKE ?
+            ORDER BY nim
+            """,
+            (f"%{kata_kunci}%", f"%{kata_kunci}%")
+        ).fetchall()
+    else:
+        mahasiswa = conn.execute(
+            "SELECT * FROM mahasiswa ORDER BY nim"
+        ).fetchall()
+
     conn.close()
 
     return render_template(
@@ -80,8 +95,10 @@ def home():
         mahasiswa=mahasiswa,
         tahun_sekarang=datetime.now().year,
         error=request.args.get("error"),
-        success=request.args.get("success")
+        success=request.args.get("success"),
+        kata_kunci=kata_kunci
     )
+
 
 
 # CREATE: menambah mahasiswa

@@ -45,6 +45,21 @@
 
         <h2>Daftar Mahasiswa</h2>
 
+<form action="{{ url_for('home') }}" method="GET" class="search-form">
+    <input
+        type="text"
+        name="cari"
+        placeholder="Cari berdasarkan NIM atau nama..."
+        value="{{ kata_kunci }}"
+    >
+    <button type="submit">Cari</button>
+    <a href="{{ url_for('home') }}">Reset</a>
+</form>
+
+{% if kata_kunci %}
+<p>Hasil pencarian untuk: <strong>{{ kata_kunci }}</strong></p>
+{% endif %}
+
         <div class="table-wrapper">
             <table>
                 <thead>
